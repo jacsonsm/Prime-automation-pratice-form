@@ -1,0 +1,5 @@
+CONFIG:
+  BROWSER:
+    NOME: chrome
+    URL: https://demoqa.com/automation-practice-form
+  TIMEOUT: 15

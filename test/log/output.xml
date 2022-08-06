@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220806 18:32:44.165" rpa="false" schemaversion="3">
+<suite id="s1" name="Webautomation" source="C:\Developer\Prime-Automation-pratice-form\test\feature\webautomation.robot">
+<test id="s1-t1" name="Cenario: Acessar o site demoga.com automacao-pratice-form" line="11">
+<kw name="Abrir sessão" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url:blank</arg>
+<arg>${CONFIG.BROWSER.NOME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220806 18:32:45.411" level="INFO">Opening browser 'chrome' to base url 'url:blank'.</msg>
+<status status="PASS" starttime="20220806 18:32:45.408" endtime="20220806 18:32:47.049"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${CONFIG.BROWSER.URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220806 18:32:47.051" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
+<status status="PASS" starttime="20220806 18:32:47.049" endtime="20220806 18:32:57.123"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220806 18:32:57.123" endtime="20220806 18:32:57.335"/>
+</kw>
+<status status="PASS" starttime="20220806 18:32:45.408" endtime="20220806 18:32:57.335"/>
+</kw>
+<kw name="Dado que esteja na pagina automacao-pratice-form" library="kws_automation">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220806 18:32:57.383" level="INFO">Page title is 'ToolsQA'.</msg>
+<status status="PASS" starttime="20220806 18:32:57.345" endtime="20220806 18:32:57.384"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220806 18:32:57.384" endtime="20220806 18:32:57.443"/>
+</kw>
+<status status="PASS" starttime="20220806 18:32:57.344" endtime="20220806 18:32:57.444"/>
+</kw>
+<kw name="Quando realizo o preenchimento dos dados cadastrais" library="kws_automation">
+<kw name="First Name" library="FakerLibrary">
+<var>${NAME}</var>
+<msg timestamp="20220806 18:32:57.446" level="INFO">${NAME} = Anthony</msg>
+<status status="PASS" starttime="20220806 18:32:57.446" endtime="20220806 18:32:57.446"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${LAST_NAME}</var>
+<msg timestamp="20220806 18:32:57.447" level="INFO">${LAST_NAME} = Oliveira</msg>
+<status status="PASS" starttime="20220806 18:32:57.447" endtime="20220806 18:32:57.447"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${EMAIL}</var>
+<msg timestamp="20220806 18:32:57.448" level="INFO">${EMAIL} = xrodrigues@example.org</msg>
+<status status="PASS" starttime="20220806 18:32:57.448" endtime="20220806 18:32:57.448"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${ADDRESS}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20220806 18:32:57.450" level="INFO">${ADDRESS} = Alameda Rebeca Aragão, 544
+Maria Virgínia
+21946197 Campos / BA</msg>
+<status status="PASS" starttime="20220806 18:32:57.450" endtime="20220806 18:32:57.450"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.firstName}</arg>
+<arg>${NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:57.452" level="INFO">Typing text 'Anthony' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20220806 18:32:57.450" endtime="20220806 18:32:57.662"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.lastName}</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:57.665" level="INFO">Typing text 'Oliveira' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20220806 18:32:57.662" endtime="20220806 18:32:57.813"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.userEmail}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:57.816" level="INFO">Typing text 'xrodrigues@example.org' into text field 'userEmail'.</msg>
+<status status="PASS" starttime="20220806 18:32:57.813" endtime="20220806 18:32:58.165"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.userNumber}</arg>
+<arg>7399999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:58.167" level="INFO">Typing text '7399999999' into text field 'userNumber'.</msg>
+<status status="PASS" starttime="20220806 18:32:58.165" endtime="20220806 18:32:58.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.subjectsInput}</arg>
+<arg>Prime Control</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:58.395" level="INFO">Typing text 'Prime Control' into text field 'subjectsInput'.</msg>
+<status status="PASS" starttime="20220806 18:32:58.393" endtime="20220806 18:32:58.678"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOBBIES.SPORT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:58.679" level="INFO">Clicking element '//label[contains(.,'Sports')]'.</msg>
+<status status="PASS" starttime="20220806 18:32:58.678" endtime="20220806 18:32:58.777"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${HOBBIES.SPORT}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220806 18:32:58.777" endtime="20220806 18:32:58.828"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER.currentAddress}</arg>
+<arg>${ADDRESS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:58.831" level="INFO">Typing text 'Alameda Rebeca Aragão, 544
+Maria Virgínia
+21946197 Campos / BA' into text field 'currentAddress'.</msg>
+<status status="PASS" starttime="20220806 18:32:58.828" endtime="20220806 18:32:59.258"/>
+</kw>
+<status status="PASS" starttime="20220806 18:32:57.445" endtime="20220806 18:32:59.259"/>
+</kw>
+<kw name="E seleciono genero Male" library="kws_automation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GENDER.MALE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220806 18:32:59.262" level="INFO">Clicking element '//label[contains(.,'Male')]'.</msg>
+<status status="PASS" starttime="20220806 18:32:59.260" endtime="20220806 18:32:59.351"/>
+</kw>
+<status status="PASS" starttime="20220806 18:32:59.259" endtime="20220806 18:32:59.352"/>
+</kw>
+<kw name="E realizo upload de imagem" library="kws_automation">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>uploadPicture</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220806 18:32:59.354" endtime="20220806 18:32:59.400"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>uploadPicture</arg>
+<arg>${FILE.IMG}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20220806 18:32:59.403" level="INFO">Sending c:\image\picture.png to browser.</msg>
+<status status="PASS" starttime="20220806 18:32:59.401" endtime="20220806 18:32:59.461"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220806 18:33:04.465" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220806 18:32:59.462" endtime="20220806 18:33:04.465"/>
+</kw>
+<status status="PASS" starttime="20220806 18:32:59.352" endtime="20220806 18:33:04.465"/>
+</kw>
+<kw name="Fechar sessão" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220806 18:33:04.753" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220806 18:33:04.467" endtime="20220806 18:33:04.753"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220806 18:33:04.753" endtime="20220806 18:33:07.501"/>
+</kw>
+<status status="PASS" starttime="20220806 18:33:04.466" endtime="20220806 18:33:07.501"/>
+</kw>
+<tag>cenario1</tag>
+<status status="PASS" starttime="20220806 18:32:45.406" endtime="20220806 18:33:07.502"/>
+</test>
+<doc>Aqui estarão presentes todos os cenários de automação WEB</doc>
+<status status="PASS" starttime="20220806 18:32:44.180" endtime="20220806 18:33:07.505"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cenario1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220806 18:32:45.385" level="ERROR">Error in file 'C:\Developer\Prime-Automation-pratice-form\src\config\hooks.robot' on line 4: Invalid resource file extension '.yaml'. Supported extensions are '.resource', '.robot', '.txt', '.tsv', '.rst' and '.rest'.</msg>
+</errors>
+</robot>

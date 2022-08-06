@@ -3,14 +3,18 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 
 
 *** Variables ***
-${MALE}         //input[@value='Male']
+&{GENDER}
+...             MALE=//label[contains(.,'Male')]
+...             FEMALE=//label[contains(.,'Female')]
+...             OTHER=//label[contains(.,'Other')]
 
-${FEMALE}       id:gender-radio-2
+&{HOBBIES}
+...             SPORT=//label[contains(.,'Sports')]
+...             READING=//label[contains(.,'Reading')]
+...             MUSIC=//label[contains(.,'Music')]
 
-${OTHER}        id:gender-radio-3
-
-${FILE}         c:\\image\\picture.png
-
+&{FILE}
+...             IMG=c:\\image\\picture.png
 &{USER}
 ...             hobbies-checkbox-1=hobbies-checkbox-1
 ...             firstName=firstName

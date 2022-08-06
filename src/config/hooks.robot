@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation       Arquivo de Setup e Teardown
 
+Resource            ./hooks.yaml
+
 
 *** Keywords ***
 Abrir sessão

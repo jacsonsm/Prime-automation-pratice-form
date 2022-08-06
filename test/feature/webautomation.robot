@@ -11,8 +11,9 @@ Test Teardown       Fechar sessão
 Cenario: Acessar o site demoga.com automacao-pratice-form
     [Tags]    cenario1
     #Debug
-    Dado que esteja na tela automacao-pratice-form
-    Quando realizar o preenchimento dos dados cadastrais
-    E realizar upload de imagem
+    Dado que esteja na pagina automacao-pratice-form
+    Quando realizo o preenchimento dos dados cadastrais
+    E seleciono genero Male
+    E realizo upload de imagem
     #E Submeter cadastro
     # Então conferir se o cadastro foi efetuado com sucesso

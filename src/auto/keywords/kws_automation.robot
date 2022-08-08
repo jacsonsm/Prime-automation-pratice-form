@@ -24,8 +24,14 @@ Quando realizo o preenchimento dos dados cadastrais
     Input Text    ${USER.userNumber}    7399999999
     #Input Text    ${USER.dateOfBirthInput}    08 Aug 2022
     Input Text    ${USER.subjectsInput}    Prime Control
+
     Click Element    ${HOBBIES.SPORT}
+    Click Element    ${HOBBIES.READING}
+    Click Element    ${HOBBIES.MUSIC}
+
     Element Should Be Enabled    ${HOBBIES.SPORT}
+    Element Should Be Enabled    ${HOBBIES.READING}
+    Element Should Be Enabled    ${HOBBIES.MUSIC}
     # Select From List By Value    ${USER.days}    ${DATE.DIA}
     # Select From List By Value    ${USER.months}    ${DATE.MES}
     # Select From List By Value    ${USER.years}    ${DATE.ANO}
@@ -38,10 +44,15 @@ E seleciono genero Male
 E realizo upload de imagem
     Wait Until Element Is Visible    uploadPicture
     Choose File    uploadPicture    ${FILE.IMG}
-    Sleep    5
-# E Submeter cadastro
-#    Click Button    ${USER.submit}
+    Sleep    2
 
-# Então conferir se o cadastro foi efetuado com sucesso
-#    Wait Until Page Contains    ${}
-#    Page Should Contain Element    ${}
+E Submeter cadastro
+    Sleep    2
+    #Wait Until Element Is Visible    ${SUBMIT}    #//button[@id='submit']
+    Click Element    ${USER.submit}    #//button[@id='submit']
+
+Então o cadastro foi efetuado com sucesso
+    Sleep    2
+    #${message}=    Get WebElement    id:example-modal-sizes-title-lg
+    #Should Contain    ${message}    Thanks for submitting the form
+    Page Should Contain Element    ${MODAL}

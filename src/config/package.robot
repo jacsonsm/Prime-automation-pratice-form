@@ -8,5 +8,4 @@ Library             FakerLibrary    locale=pt_BR
 Resource            hooks.robot
 Variables           hooks.yaml
 Resource            ../auto/keywords/kws_automation.robot
-Resource            ../auto/elements/home.robot
 Resource            ../auto/elements/pratice-form.robot

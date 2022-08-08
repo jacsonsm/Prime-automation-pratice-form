@@ -15,5 +15,5 @@ Cenario: Acessar o site demoga.com automacao-pratice-form
     Quando realizo o preenchimento dos dados cadastrais
     E seleciono genero Male
     E realizo upload de imagem
-    #E Submeter cadastro
-    # Então conferir se o cadastro foi efetuado com sucesso
+    E Submeter cadastro
+    Então o cadastro foi efetuado com sucesso

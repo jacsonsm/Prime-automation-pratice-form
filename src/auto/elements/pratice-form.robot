@@ -3,6 +3,11 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 
 
 *** Variables ***
+&{HOME}
+...             TITLE=ToolsQA
+...             MENU=//span[contains(.,'Practice Form')]
+...             BTN_SUBMIT=submit
+
 &{GENDER}
 ...             MALE=//label[contains(.,'Male')]
 ...             FEMALE=//label[contains(.,'Female')]
@@ -25,8 +30,11 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 ...             currentAddress=currentAddress
 ...             subjectsInput=subjectsInput
 ...             submit=submit
-
+${SUBMIT}
+...             XPath=//*[@id="submit"]
 &{DATE}
 ...             DIA=14
 ...             MES=01
 ...             ANO=2000
+
+${MODAL}        XPath=//*[@id="example-modal-sizes-title-lg"]

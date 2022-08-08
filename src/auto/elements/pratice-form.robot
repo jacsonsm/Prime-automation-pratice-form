@@ -19,7 +19,7 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 ...             MUSIC=//label[contains(.,'Music')]
 
 &{FILE}
-...             IMG=c:\\image\\picture.png
+...             IMG=\\src\\auto\\image\\prime.jpg
 &{USER}
 ...             hobbies-checkbox-1=hobbies-checkbox-1
 ...             firstName=firstName
@@ -29,7 +29,10 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 ...             dateOfBirthInput=dateOfBirthInput
 ...             currentAddress=currentAddress
 ...             subjectsInput=subjectsInput
+...             state=state
+...             city=city
 ...             submit=submit
+
 ${SUBMIT}
 ...             XPath=//*[@id="submit"]
 &{DATE}

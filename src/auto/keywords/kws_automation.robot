@@ -24,6 +24,7 @@ Quando realizo o preenchimento dos dados cadastrais
     Input Text    ${USER.userNumber}    7399999999
     #Input Text    ${USER.dateOfBirthInput}    08 Aug 2022
     Input Text    ${USER.subjectsInput}    Prime Control
+    Press Keys    ${USER.subjectsInput}    RETURN
 
     Click Element    ${HOBBIES.SPORT}
     Click Element    ${HOBBIES.READING}
@@ -32,9 +33,12 @@ Quando realizo o preenchimento dos dados cadastrais
     Element Should Be Enabled    ${HOBBIES.SPORT}
     Element Should Be Enabled    ${HOBBIES.READING}
     Element Should Be Enabled    ${HOBBIES.MUSIC}
-    # Select From List By Value    ${USER.days}    ${DATE.DIA}
-    # Select From List By Value    ${USER.months}    ${DATE.MES}
-    # Select From List By Value    ${USER.years}    ${DATE.ANO}
+
+    # Click Element    ${USER.days}    ${DATE.DIA}
+    # Click Element    ${USER.months}    ${DATE.MES}
+    # Click Element    ${USER.years}    ${DATE.ANO}
+
+    Sleep    2
     Input Text    ${USER.currentAddress}    ${ADDRESS}
     #Select From List By    //div[@class=' css-1hwfws3'][contains(.,'NCR')]
 
@@ -43,13 +47,13 @@ E seleciono genero Male
 
 E realizo upload de imagem
     Wait Until Element Is Visible    uploadPicture
-    Choose File    uploadPicture    ${FILE.IMG}
+    Choose File    uploadPicture    ${EXECDIR}${FILE.IMG}
     Sleep    2
 
 E Submeter cadastro
     Sleep    2
-    #Wait Until Element Is Visible    ${SUBMIT}    #//button[@id='submit']
-    Click Element    ${USER.submit}    #//button[@id='submit']
+    #Wait Until Element Is Visible    ${SUBMIT}
+    Click Element    ${USER.submit}
 
 Então o cadastro foi efetuado com sucesso
     Sleep    2

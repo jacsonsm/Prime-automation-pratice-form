@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation       Arquivo de Setup e Teardown
 
-#Resource    ./hooks.yaml
 Library             SeleniumLibrary
 
 

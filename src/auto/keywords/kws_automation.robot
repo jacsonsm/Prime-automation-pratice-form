@@ -6,26 +6,36 @@ Resource            ../elements/pratice-form.robot
 
 
 *** Keywords ***
-Dado que esteja na pagina automacao-pratice-form
+Dado que estou na pagina automacao-pratice-form
     #Debug
     Title Should Be    ${HOME.TITLE}
     Wait Until Element Is Visible    ${HOME.MENU}
 
 Quando realizo o preenchimento dos dados cadastrais
     ${NAME}=    FakerLibrary.First Name
-    ${LAST_NAME}=    FakerLibrary.Last Name
-    ${EMAIL}=    FakerLibrary.Email
-    ${ADDRESS}=    FakerLibrary.Address
-
     Input Text    ${USER.firstName}    ${NAME}
+
+    ${LAST_NAME}=    FakerLibrary.Last Name
     Input Text    ${USER.lastName}    ${LAST_NAME}
+
+    ${EMAIL}=    FakerLibrary.Email
     Input Text    ${USER.userEmail}    ${EMAIL}
 
+    Click Element    ${GENDER.MALE}
+
     Input Text    ${USER.userNumber}    7399999999
-    #Input Text    ${USER.dateOfBirthInput}    08 Aug 2022
-    Input Text    ${USER.subjectsInput}    Prime Control
+
+E informo a data de aniversário
+    Click Element    ${USER.dateOfBirthInput}
+    Click Element    xpath://div[@id="dateOfBirth"]//option[@value="${DATE.ANO}"]
+#    Click Element    xpath://div[@id="dateOfBirth"]//option[text()="${DATE.MES}"]
+#    Click Element    xpath://div[@class="react-datepicker__day react-datepicker__day--0${DATE.DIA}"]
+    Press Keys    ${USER.dateOfBirthInput}    RETURN
+
+    Input Text    ${USER.subjectsInput}    Accounting
     Press Keys    ${USER.subjectsInput}    RETURN
 
+E marco as opções de hobbies
     Click Element    ${HOBBIES.SPORT}
     Click Element    ${HOBBIES.READING}
     Click Element    ${HOBBIES.MUSIC}
@@ -34,29 +44,35 @@ Quando realizo o preenchimento dos dados cadastrais
     Element Should Be Enabled    ${HOBBIES.READING}
     Element Should Be Enabled    ${HOBBIES.MUSIC}
 
-    # Click Element    ${USER.days}    ${DATE.DIA}
-    # Click Element    ${USER.months}    ${DATE.MES}
-    # Click Element    ${USER.years}    ${DATE.ANO}
-
-    Sleep    2
-    Input Text    ${USER.currentAddress}    ${ADDRESS}
-    #Select From List By    //div[@class=' css-1hwfws3'][contains(.,'NCR')]
-
-E seleciono genero Male
-    Click Element    ${GENDER.MALE}
-
 E realizo upload de imagem
     Wait Until Element Is Visible    uploadPicture
     Choose File    uploadPicture    ${EXECDIR}${FILE.IMG}
     Sleep    2
 
-E Submeter cadastro
-    Sleep    2
-    #Wait Until Element Is Visible    ${SUBMIT}
-    Click Element    ${USER.submit}
+E preencho o endereço
+    ${ADDRESS}=    FakerLibrary.Address
+    Input Text    ${USER.currentAddress}    ${ADDRESS}
 
-Então o cadastro foi efetuado com sucesso
+E seleciono o Estado
+    Execute Javascript    window.scrollTo(0,1600)
+    Click Element    ${USER.state}
+    Click Element    xpath://div[@id="stateCity-wrapper"]//div[text()="NCR"]
+
+E seleciono a Cidade
+    Click Element    ${USER.city}
+    Click Element    xpath://div[@id="stateCity-wrapper"]//div[text()="Delhi"]
+
+E submeto o cadastro
     Sleep    2
-    #${message}=    Get WebElement    id:example-modal-sizes-title-lg
-    #Should Contain    ${message}    Thanks for submitting the form
+    Execute Javascript    document.body.style.zoom="90%"
+    Execute Javascript    window.scrollTo(0,1600)
+    Page Should Contain Element    ${SUBMIT}
+    #Click Element    ${SUBMIT}
+    Execute Javascript    document.querySelector("button[id='submit']").click();
+
+Então o cadastro é efetuado com sucesso
+    Sleep    2
+    Capture Page Screenshot
     Page Should Contain Element    ${MODAL}
+    Execute Javascript    document.querySelector("button[id='closeLargeModal']").click();
+    Sleep    1

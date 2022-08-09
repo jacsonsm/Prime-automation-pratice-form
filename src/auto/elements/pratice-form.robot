@@ -34,7 +34,8 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 ...             submit=submit
 
 ${SUBMIT}
-...             XPath=//*[@id="submit"]
+...             XPath=//button[@type='submit']
+
 &{DATE}
 ...             DIA=14
 ...             MES=01

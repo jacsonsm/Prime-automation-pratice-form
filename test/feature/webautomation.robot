@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation       Aqui estarão presentes todos os cenários de automação WEB
+Documentation       Aqui estão presentes os cenários de automação. \n
+...                 Preenchimento do Formulario de Cadasatro de Estudantes.
 
 Resource            ../../src/config/package.robot
 
@@ -8,12 +9,25 @@ Test Teardown       Fechar sessão
 
 
 *** Test Cases ***
-Cenario: Acessar o site demoga.com automacao-pratice-form
+Cenario: Automação formulario de cadastro demoga.com\automacao-pratice-form
     [Tags]    cenario1
     #Debug
-    Dado que esteja na pagina automacao-pratice-form
+    Dado que estou na pagina automacao-pratice-form
+
     Quando realizo o preenchimento dos dados cadastrais
-    E seleciono genero Male
+
+    E informo a data de aniversário
+
+    E marco as opções de hobbies
+
     E realizo upload de imagem
-    E Submeter cadastro
-    Então o cadastro foi efetuado com sucesso
+
+    E preencho o endereço
+
+    E seleciono o Estado
+
+    E seleciono a Cidade
+
+    E submeto o cadastro
+
+    Então o cadastro é efetuado com sucesso

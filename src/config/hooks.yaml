@@ -2,4 +2,5 @@ CONFIG:
   BROWSER:
     NOME: chrome
     URL: https://demoqa.com/automation-practice-form
+    OPTIONS: options=add_experimental_option('excludeSwitches', ['enable-logging'])
   TIMEOUT: 15

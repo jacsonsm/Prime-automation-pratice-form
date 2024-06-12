@@ -4,7 +4,7 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 
 *** Variables ***
 &{HOME}
-...             TITLE=ToolsQA
+...             TITLE=DEMOQA
 ...             MENU=//span[contains(.,'Practice Form')]
 ...             BTN_SUBMIT=submit
 

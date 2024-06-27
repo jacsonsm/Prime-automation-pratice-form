@@ -10,8 +10,11 @@ Test Teardown       Fechar sessão
 
 *** Test Cases ***
 Cenario: Automação formulario de cadastro demoga.com\automacao-pratice-form
-    [Tags]    cenario1
-    #Debug
+    [Documentation]    Realiza o acesso ao demoqa.com,
+    ...    realiza o preenchimento dos dados obrigatorios,
+    ...    e submete o cadastro
+    [Tags]    cadastro
+
     Dado que estou na pagina automacao-pratice-form
     Quando realizo o preenchimento dos dados cadastrais
     E informo a data de aniversário

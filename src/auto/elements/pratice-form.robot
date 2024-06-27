@@ -19,7 +19,7 @@ Documentation       Mapeamento dos elementos para realizar o cadastro
 ...             MUSIC=//label[contains(.,'Music')]
 
 &{FILE}
-...             IMG=\\src\\auto\\image\\prime.jpg
+...             IMG=\\src\\auto\\image\\picture.jpg
 &{USER}
 ...             hobbies-checkbox-1=hobbies-checkbox-1
 ...             firstName=firstName
